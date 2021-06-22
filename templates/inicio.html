@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+{% block head%}
+<link rel="stylesheet" href=" {{ url_for('static',filename='css/index.css') }} ">
+{% endblock %}
+{% block body%}
+<header>
+    <div class="container p-4">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                    aria-controls="nav-home" aria-selected="true">Inicio</a>
+                <a class="nav-link" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab"
+                    aria-controls="nav-login" aria-selected="false">Inicio de Sesión</a>
+                <a class="nav-link" id="nav-register-tab" data-toggle="tab" href="#nav-register" role="tab"
+                    aria-controls="nav-register" aria-selected="false">Registro</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active p-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <h3>Aqui colocaremos la info del proyecto</h3>
+            </div>
+            <div class="tab-pane fade" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+                <div class="container p-4">
+                    <h3>Inicio de Sesión</h3>
+                    <div class="form-group">
+                        <form id="login-form">
+                            <input type="email" id="login-email" class="form-control"
+                                placeholder="Ingrese su correo electrónico" /><br />
+                            <input type="password" name="login-password" id="login-password" class="form-control"
+                                placeholder="Ingrese su contraseña" /><br />
+                            <button type="submit" class="btn btn-primary">Ingresar</button><br>
+                        </form>
+                        <div class="alert alert-danger alert-dismissible fade show login-alert m-4" role="alert"
+                            style="display:none">
+                            <strong>Datos Incorrectos.</strong> ¿Ya estás registrado?
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
+                <div class="container p-4">
+                    <h3>Registro</h3>
+                    <div class="form-group">
+                        <form id="register-form">
+                            <input type="email" name="register-email" id="register-email" class="form-control"
+                                placeholder="Ingrese su correo electrónico" /><br />
+                            <input type="password" name="register-password" id="register-password" class="form-control"
+                                placeholder="Ingrese su contraseña" /><br />
+                            <button type="submit" class="btn btn-primary">Registrarme</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<script>
+    //auth.onAuthStateChanged(function(user) {
+    //if (user) {
+     //   window.location="/user ";
+    //}
+//});
+</script>
+<script src="  {{ url_for('static' ,filename='js/index.js') }} "></script>
+{% endblock %}

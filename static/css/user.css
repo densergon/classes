@@ -1,0 +1,7 @@
+body{
+    background-color: #eceff1;
+}
+#schedule {
+    width: 100%;
+    overflow-x: scroll;
+}
