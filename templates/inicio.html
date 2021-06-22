@@ -3,60 +3,69 @@
 <link rel="stylesheet" href=" {{ url_for('static',filename='css/index.css') }} ">
 {% endblock %}
 {% block body%}
-<header>
-    <div class="container p-4">
-        <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-                    aria-controls="nav-home" aria-selected="true">Inicio</a>
-                <a class="nav-link" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab"
-                    aria-controls="nav-login" aria-selected="false">Inicio de Sesión</a>
-                <a class="nav-link" id="nav-register-tab" data-toggle="tab" href="#nav-register" role="tab"
-                    aria-controls="nav-register" aria-selected="false">Registro</a>
+
+<section id="nav-bar">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class=" container-fluid ">
+            <a class="navbar-brand ">Class Manager</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                </ul>
             </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active p-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                <h3>Aqui colocaremos la info del proyecto</h3>
-            </div>
-            <div class="tab-pane fade" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
-                <div class="container p-4">
-                    <h3>Inicio de Sesión</h3>
-                    <div class="form-group">
-                        <form id="login-form">
-                            <input type="email" id="login-email" class="form-control"
-                                placeholder="Ingrese su correo electrónico" /><br />
-                            <input type="password" name="login-password" id="login-password" class="form-control"
-                                placeholder="Ingrese su contraseña" /><br />
-                            <button type="submit" class="btn btn-primary">Ingresar</button><br>
-                        </form>
-                        <div class="alert alert-danger alert-dismissible fade show login-alert m-4" role="alert"
-                            style="display:none">
-                            <strong>Datos Incorrectos.</strong> ¿Ya estás registrado?
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    </div>
+        </div>
+      </nav>
+
+</section>
+
+<section id="login">
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form id="register-form">
+                <h1>Crear Cuenta</h1>
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input class="myInput" type="email" placeholder="Correo Electronico" id="register-email" required> 
                 </div>
-            </div>
-            <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
-                <div class="container p-4">
-                    <h3>Registro</h3>
-                    <div class="form-group">
-                        <form id="register-form">
-                            <input type="email" name="register-email" id="register-email" class="form-control"
-                                placeholder="Ingrese su correo electrónico" /><br />
-                            <input type="password" name="register-password" id="register-password" class="form-control"
-                                placeholder="Ingrese su contraseña" /><br />
-                            <button type="submit" class="btn btn-primary">Registrarme</button>
-                        </form>
-                    </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input class="myInput" type="password" id="register-password" placeholder="Contraseña" required>
+                </div>
+                <button>Registrar</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form id="login-form">
+                <h1>Inicia Sesion</h1>
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input class="myInput" type="email" placeholder="Usuario" id="login-email" required> 
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input class="myInput" type="password" id="login-password" placeholder="Contraseña" required>
+                </div>
+                <button>Inicio</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Bienvenido de Vuelta!</h1>
+                    <p>Inicia sesion con tus credenciales</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Nuevo Aqui?</h1>
+                    <p>Registrate y empieza a usar la aplicacion.</p>
+                    <button class="ghost" id="signUp">Registro</button>
                 </div>
             </div>
         </div>
     </div>
-</header>
+
+</section>
 <script>
     //auth.onAuthStateChanged(function(user) {
     //if (user) {
