@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% block head%}
 <link rel="stylesheet" href=" {{ url_for('static',filename='css/index.css') }} ">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
 {% endblock %}
 {% block body%}
 
@@ -18,7 +19,7 @@
 
 </section>
 
-<section id="login">
+<section id="login" >
 
     <div class="container" id="container">
         <div class="form-container sign-up-container">
@@ -33,30 +34,43 @@
                     <input class="myInput" type="password" id="register-password" placeholder="Contraseña" required>
                 </div>
                 <button>Registrar</button>
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert-register">
+                    <strong>Sin datos</strong> Verifica tu informacion
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
             </form>
         </div>
         <div class="form-container sign-in-container">
             <form id="login-form">
-                <h1>Inicia Sesion</h1>
+                <h1>Inicia Sesion</h1> 
                 <div class="form-group">
                     <i class="fas fa-user"></i>
-                    <input class="myInput" type="email" placeholder="Usuario" id="login-email" required> 
+                    <input class="myInput" type="email" placeholder="Correo Electronico" id="login-email" required> 
                 </div>
                 <div class="form-group">
                     <i class="fas fa-lock"></i>
                     <input class="myInput" type="password" id="login-password" placeholder="Contraseña" required>
                 </div>
                 <button>Inicio</button>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert-login">
+                    <strong>Datos incorrectos</strong> Verifica tu informacion
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
             </form>
+
         </div>
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
                     <h1>Bienvenido de Vuelta!</h1>
                     <p>Inicia sesion con tus credenciales</p>
-                    <button class="ghost" id="signIn">Sign In</button>
+                    <button class="ghost" id="signIn">Iniciar Sesión</button>
                 </div>
-                <div class="overlay-panel overlay-right">
+                <div class="overlay-panel overlay-right"> 
                     <h1>Nuevo Aqui?</h1>
                     <p>Registrate y empieza a usar la aplicacion.</p>
                     <button class="ghost" id="signUp">Registro</button>
@@ -67,11 +81,11 @@
 
 </section>
 <script>
-    //auth.onAuthStateChanged(function(user) {
-    //if (user) {
-     //   window.location="/user ";
-    //}
-//});
+    auth.onAuthStateChanged(function(user) {
+    if (user) {
+       window.location="/user ";
+    }
+});
 </script>
 <script src="  {{ url_for('static' ,filename='js/index.js') }} "></script>
 {% endblock %}

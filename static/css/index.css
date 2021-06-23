@@ -34,14 +34,9 @@ h3 {
   }
   
   .navbar{
-      background-image: linear-gradient(45deg, black , rgba(3, 95, 8));
+      background-image: linear-gradient(45deg, #0B7734, #0b7734);
       padding: 0 !important;
   }
-
-  .fa-calculator{
-    color: #fff;
-    font-size: 30px !important;
-}
   
   .navbar-brand
   {
@@ -54,7 +49,7 @@ h3 {
 
   .navbar-nav li
 {
-    padding: 0 10px;
+    padding: 0 0px;
 }
 
 .navbar-nav li a
@@ -69,7 +64,7 @@ h3 {
 
 #login
 {
-  background-image: url('/static/board.jpeg');
+  	background-image: url(/static/images/board.jpeg) ;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -109,8 +104,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid blue;
-	background-color: blue;
+	border: 1px solid #0B7734;
+	background-color: #0B7734;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -179,7 +174,7 @@ input .myInput:focus
 {
   padding-top: 20px;
   position: absolute;
-  color: darkgray;
+  color: #0B7734;
   left: 55px;
 }
 
@@ -236,8 +231,8 @@ input .myInput:focus
 
 .overlay {
 	background: #3B8038;
-	background: -webkit-linear-gradient(45deg, darkgray, darkgreen);
-	background: linear-gradient(45deg, darkgray , darkgreen);
+	background: -webkit-linear-gradient(45deg, #398CAB, #235769);
+	background: linear-gradient(45deg, #398CAB, #235769);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -286,6 +281,12 @@ input .myInput:focus
 	transform: translateX(20%);
 }
 
+#alert-login{
+	display: none;
+}
 
+#alert-register{
+	display: none;
+}
   
   

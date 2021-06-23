@@ -31,6 +31,7 @@ btnAdminClasses.addEventListener("click", e => {
 
 btnLogOut = document.querySelector('#btnSignOut');
 
+//Verificador de sesion 
 
 btnLogOut.addEventListener('click', e => {
     e.preventDefault();
