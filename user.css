@@ -1,0 +1,58 @@
+body{
+    background-image: url(/static/images/pizarron.jpg);
+    
+}
+#schedule {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+#nav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+.navbar{
+    background-color: transparent !important;
+    padding: 0 !important;
+  }
+  
+.navbar-brand
+  {
+    color: rgb(255, 255, 255) !important;
+    font-size: 25px;
+    font-weight: 700;
+	  padding: 0 5px;
+	  font-family: 'Montserrat', sans-serif;
+  }
+
+.navbar-nav li
+{
+    padding: 0 0px;
+}
+
+.navbar-nav li a
+{
+    color: #fff !important;
+    font-weight: 600;
+    float: right;
+    text-align: left;
+}
+
+.color_letters{
+    color: rgb(255, 255, 255) !important;
+    font-size: 15px;
+    font-weight: 700;
+	  padding: 0 5px;
+	  font-family: 'Montserrat', sans-serif;
+  }
+
+.color_letters_2{
+    background-color: transparent !important;
+    color: rgb(255, 255, 255) !important;
+    font-size: 15px;
+    font-weight: 700;
+	  padding: 0 5px;
+	  font-family: 'Montserrat', sans-serif;
+  }
