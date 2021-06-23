@@ -9,6 +9,9 @@ registerForm.addEventListener("submit", (e) => {
   registerForm.reset();
   auth.createUserWithEmailAndPassword(emailReg, passwordReg)
     .then((userCredential) => {
+
+
+      
         var user = userCredential.user;
         db.collection('usuarios').doc(user.uid).set({
             phone:'', 

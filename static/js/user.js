@@ -4,7 +4,6 @@ auth.onAuthStateChanged(function(user) {
         const userMail = user.email;
         const uid = user.uid;
         document.getElementById('userMail').innerHTML = userMail;
-        
     } else {
         window.location="/";
     }
