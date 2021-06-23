@@ -19,13 +19,12 @@
 </section>
 
 <section id="login" >
-
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form id="register-form">
                 <h1>Crear Cuenta</h1>
                 <div class="form-group">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user has-feedback"></i>
                     <input class="myInput" type="email" placeholder="Correo Electronico" id="register-email" required> 
                 </div>
                 <div class="form-group">
@@ -80,12 +79,5 @@
 
 </section>
 </div>
-<script>
-    auth.onAuthStateChanged(function(user) {
-    if (user) {
-       window.location="/user ";
-    }
-});
-</script>
 <script src="  {{ url_for('static' ,filename='js/index.js') }} "></script>
 {% endblock %}

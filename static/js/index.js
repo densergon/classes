@@ -9,16 +9,42 @@ registerForm.addEventListener("submit", (e) => {
   registerForm.reset();
   auth.createUserWithEmailAndPassword(emailReg, passwordReg)
     .then((userCredential) => {
-
-
-      
-        var user = userCredential.user;
-        db.collection('usuarios').doc(user.uid).set({
-            phone:'', 
-            email : user.email,
-            curricula:''
-        });
-        alert("Registro Exitoso");
+            var user = userCredential.user;
+            db.collection("curricula").add({
+              clases:[{
+                horario:{
+                  Domingo:'',
+                  Lunes:'',
+                  Martes:'',
+                  Miercoles:'',
+                  Jueves:'',
+                  Viernes:'',
+                  Sabado:''
+                },
+                materia:'',
+                profesor:'',
+                plataforma:{
+                  nombre:'',
+                  enlace:'',
+                  codigo:'',
+                  clave:'',
+                  nota:''
+                }
+              },{}],
+              usuario: user.uid,
+          })
+          .then(() => {
+              db.collection('usuarios').doc(user.uid).set({
+                  phone:'', 
+                  email : user.email
+              });
+              var idUser = user.uid;
+              console.log(idUser);
+              alert("Registro Exitoso");
+          })
+          .catch((error) => {
+              console.error("Error adding document: ", error);
+          });
     })
     .catch((error) => {
       var errorCode = error.code;
